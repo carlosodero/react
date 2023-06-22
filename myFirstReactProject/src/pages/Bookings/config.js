@@ -1,6 +1,6 @@
 const bookings = [
   {
-    id: 1,
+    id: '1',
     description: 'Mi primo el de Zumosol',
     date: '23-06-2023 10:30',
     client: 'Miguel Indurain',
@@ -8,7 +8,7 @@ const bookings = [
     price: 15,
   },
   {
-    id: 2,
+    id: '2',
     description: 'Mucho pelo en las piernas',
     date: '24-06-2023 11:00',
     client: 'Perico Delgado',
@@ -16,7 +16,7 @@ const bookings = [
     price: 50,
   },
   {
-    id: 3,
+    id: '3',
     description: 'Te dieron pal pelo',
     date: '22-06-2023 17:00',
     client: 'Tony Rominger',
@@ -24,7 +24,7 @@ const bookings = [
     price: 45,
   },
   {
-    id: 4,
+    id: '4',
     description: 'Un maquinilla',
     date: '23-06-2023 17:00',
     client: 'Greg Lemmond',

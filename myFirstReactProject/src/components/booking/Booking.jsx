@@ -9,9 +9,9 @@ function Booking(props) {
       <div className='cardTime'>{ date }</div>
       <div className='cardContainer'>
         <div>
-        { description }
-          </div>
-        <button onClick={ () => navigate('/bookingdetails/' + id) }>
+          { description }
+        </div>
+        <button onClick={ () => navigate('/bookdet/' + id) }>
         Book details
         </button>
       </div>
