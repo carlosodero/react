@@ -1,6 +1,6 @@
-import bookingsconfig from './config';
-import Booking from '../../components/booking/Booking.jsx';
-// import '/.Bookings.css';
+import bookingsconfig from './config.js';
+import Booking from '../../components/Booking/Booking.jsx';
+import './Bookings.css';
 
 function Bookings() {
   return (
@@ -14,5 +14,4 @@ function Bookings() {
     </>
   );
 }
-
 export default Bookings;
