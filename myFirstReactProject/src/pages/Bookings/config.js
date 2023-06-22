@@ -22,6 +22,14 @@ const bookings = [
     client: 'Tony Rominger',
     service: 'Masaje antiestress',
     price: 45,
+  },
+  {
+    id: 4,
+    description: 'Un maquinilla',
+    date: '23-06-2023 17:00',
+    client: 'Greg Lemmond',
+    service: 'Bigote',
+    price: 10,
   }
 ];
 

@@ -3,7 +3,7 @@ import './Booking.css';
 
 function Booking(props) {
   const navigate = useNavigate();
-  const { description, date } = props;
+  const { id, description, date } = props;
   return (
     <>
       <div className='cardTime'>{ date }</div>
@@ -11,7 +11,7 @@ function Booking(props) {
         <div>
         { description }
           </div>
-        <button onClick={ () => navigate('/flags') }>
+        <button onClick={ () => navigate('/bookingdetails/' + id) }>
         Book details
         </button>
       </div>
