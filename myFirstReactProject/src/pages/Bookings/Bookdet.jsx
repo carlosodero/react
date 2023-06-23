@@ -6,8 +6,8 @@ import '../../components/booking/Booking.css';
 function BookingDet() {
   const navigate = useNavigate();
   const { id } = useParams();
-  const selectedBooking = bookingsconfig.find(obj => obj.id === id);
-  console.log('selectedBooking', selectedBooking);
+  const idAsNumber = parseInt(id);
+  const selectedBooking = bookingsconfig.find(obj =>obj.id === idAsNumber);
 
   return (
     <>
