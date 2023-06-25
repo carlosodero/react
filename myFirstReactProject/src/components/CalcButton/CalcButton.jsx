@@ -2,7 +2,7 @@ import './CalcButton.css';
 
 function CalcButton({ children, onClickHandler }) {
   return (
-    <button onClick={ onClickHandler } className='button'>{ children }</button>
+    <button onClick={ onClickHandler } style={children === '=' ? {backgroundColor: 'orange'} : {backgroundColor: 'white'}} className='button'>{ children }</button>
   );
 }
 

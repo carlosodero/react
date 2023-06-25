@@ -8,12 +8,12 @@ function Calc() {
   const initalValue = 0;
   const [displayed, setDisplay] = useState(initalValue);
 
-  function onClickHandler(num) {
-    num === '=' ? setDisplay(eval(displayed)) :
-      num === 'C' ? setDisplay(initalValue) :
+  function onClickHandler(key) {
+    key === '=' ? setDisplay(eval(displayed)) :
+      key === 'C' ? setDisplay(initalValue) :
         displayed === 0 ?
-          setDisplay(num) :
-          setDisplay(`${displayed}${num}`);
+          setDisplay(key) :
+          setDisplay(`${displayed}${key}`);
   }
 
   return (
