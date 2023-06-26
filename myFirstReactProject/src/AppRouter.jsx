@@ -4,7 +4,7 @@ import App from './pages/App/App.jsx';
 import Bookings from './pages/Bookings/Bookings.jsx';
 import URLParams from './pages/URLParams.jsx';
 import BookDet from './pages/Bookings/Bookdet.jsx';
-import Calc from './pages/calc/calc2.jsx';
+import Calc from './pages/calc/calc.jsx';
 
 function AppRouter() {
   return useRoutes(
