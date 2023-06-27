@@ -5,6 +5,7 @@ import Bookings from './pages/Bookings/Bookings.jsx';
 import URLParams from './pages/URLParams.jsx';
 import BookDet from './pages/Bookings/Bookdet.jsx';
 import Calc from './pages/calc/calc.jsx';
+import WheelOfFortune from './pages/WheelOfFortune/WheelOfFortune.jsx';
 
 function AppRouter() {
   return useRoutes(
@@ -28,6 +29,10 @@ function AppRouter() {
       {
         element: <Calc />,
         path: '/calc',
+      },
+      {
+        element: <WheelOfFortune />,
+        path: '/WheelOfFortune',
       },
       {
         element: <URLParams />,

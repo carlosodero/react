@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import CalcButton from '../../components/CalcButton/CalcButtons.jsx';
 import CalcOnOff from '../../components/CalcButton/CalcOnOff.jsx';
 import CalcTopLine from '../../components/CalcButton/CalcTopLine.jsx';
@@ -12,26 +12,41 @@ function Calc() {
     [1, 2, 3, '-'],
     [0, '.', '=', '+']
   ];
-  // init useState OnClickHandler()
+  // init useState onClickHandler()
   const initalValue = 0;
   const [displayed, setDisplay] = useState(initalValue);
 
-  // init useState OnOff()
+  // init useState onOff()
   const startMode = 'ON';
   const [status, setStatus] = useState(startMode);
 
+  // init useState setDisplaySize()
+  const initialSize = 80;
+  const [displaySize, setDisplaySize] = useState(initialSize);
+
   function onClickHandler(key) {
     key === '=' ? setDisplay(eval(displayed)) :
-      key === 'AC' ? setDisplay(initalValue) :
+      key === 'AC' ? (setDisplay(initalValue), setDisplaySize(initialSize))  :
         displayed === 0 ?
           setDisplay(key) :
           setDisplay(`${displayed}${key}`);
   }
 
-  function OnOff() {
+  function onOff() {
     status === 'ON' ? setStatus('OFF') : setStatus('ON');
     setDisplay(initalValue);
+    setDisplaySize(initialSize);
   }
+
+  useEffect(() => {
+    let limitCharts = 6;
+    const currentCharts = displayed.length;
+    limitCharts < currentCharts ? setDisplaySize(displaySize - 6) : '';
+    limitCharts += 1;
+    console.log('limitCharts', limitCharts);
+    console.log('currentCharts', currentCharts);
+  }, [displayed]
+  );
 
   return (
     <>
@@ -39,12 +54,12 @@ function Calc() {
         <div id='calc' className='calcBody'>
           <CalcTopLine></CalcTopLine>
           <div>
-            <div className='display'>{status === 'ON' ? displayed : ''}</div>
+            <div style={{ fontSize: `${displaySize}px` }} className='display'>{status === 'ON' ? displayed : ''}</div>
           </div>
           <br></br>
           <div>
             <CalcOnOff onClickHandler={() =>
-              OnOff()}>{status}
+              onOff()}>{status}
             </CalcOnOff>
           </div>
           <div>
