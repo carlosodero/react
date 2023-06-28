@@ -5,14 +5,14 @@ function WheelOfFortune() {
   const scores = [10, 20, 50, 100, 200, 500];
   const [film, setFilm] = useState('');
   const [points, setPoints] = useState();
-  const [letters, showletters] = useState();
+  const [letters, showletters] = useState('');
   // const [playerPoints, setPlayerPoints] = useState();
 
   useEffect(() => {
-    const chars = film;
-    console.log('chars', typeof(chars));
-    const charsArray = chars.split('');
+    const charsArray = film.split('');
+    showletters(charsArray);
     console.log('charsArray', charsArray);
+    console.log('letters', letters);
   }, [film]);
 
   function getFilm(e) {
@@ -34,12 +34,12 @@ function WheelOfFortune() {
           <input type="password" placeholder='Insert a Film to Play' onBlur={(e) =>
             getFilm(e)} />
         }
-        {film && <div style={{ display: 'flex',flexDirection: 'column', alignItems: 'center'}}>
+        {film && <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <h1>Score 0 points</h1>
           <h3>You have failed 0 times</h3>
           <br></br>
           <br></br>
-          <div>_ _ _ _ _ _ _</div>
+          <div>{letters}</div>
           <br></br>
           {!points && <button onClick={() => getPoints()}>SPIN THE WHEEL</button>}
           <br></br>
