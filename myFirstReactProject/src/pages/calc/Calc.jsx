@@ -41,8 +41,7 @@ function Calc() {
   useEffect(() => {
     let limitCharts = 6;
     const currentCharts = displayed.length;
-    limitCharts < currentCharts ? setDisplaySize(displaySize - 6) : '';
-    limitCharts += 1;
+    limitCharts < currentCharts ? setDisplaySize(displaySize > 30 ? displaySize - 10 : displaySize) : '';
     console.log('limitCharts', limitCharts);
     console.log('currentCharts', currentCharts);
   }, [displayed]
