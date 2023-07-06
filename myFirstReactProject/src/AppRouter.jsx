@@ -6,6 +6,8 @@ import URLParams from './pages/URLParams.jsx';
 import BookDet from './pages/Bookings/Bookdet.jsx';
 import Calc from './pages/calc/calc.jsx';
 import WheelOfFortune from './pages/WheelOfFortune/WheelOfFortune.jsx';
+import Bootstrap from './pages/bootstrap.jsx';
+import TicTacToe from './pages/TicTacToe/TicTacToe.jsx';
 
 function AppRouter() {
   return useRoutes(
@@ -37,6 +39,14 @@ function AppRouter() {
       {
         element: <URLParams />,
         path: '/url-params/:params',
+      },
+      {
+        element: <Bootstrap />,
+        path: '/bootstrap',
+      },
+      {
+        element: <TicTacToe />,
+        path: '/tictactoe',
       },
     ]
   );

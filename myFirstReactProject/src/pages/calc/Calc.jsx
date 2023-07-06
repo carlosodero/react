@@ -39,7 +39,7 @@ function Calc() {
   }
 
   useEffect(() => {
-    let limitCharts = 6;
+    const limitCharts = 6;
     const currentCharts = displayed.length;
     limitCharts < currentCharts ? setDisplaySize(displaySize > 30 ? displaySize - 10 : displaySize) : '';
     console.log('limitCharts', limitCharts);
