@@ -11,32 +11,51 @@ function TicTacToe() {
   const [board, setBoard] = useState(boardGrid);
   const [selectedCell, setSelectedCell] = useState();
   const [gameTurn, setGameTurn] = useState('circle');
+  const [token, setToken] = useState();
   const [startPlay, setStartPlay] = useState(false);
-  const [gamePlay, setgamePlay] = useState();
   const [error, seterror] = useState();
   const [winner, setwinner] = useState();
 
 
   useEffect(() => {
-    console.log('board', board);
     if (gameTurn === 'circle') {
-      let boardCopy = [...board];
+      const boardCopy = [...board];
       boardCopy[selectedCell] = '0';
-      console.log('boardCopy', boardCopy);
       setBoard(boardCopy);
-      console.log('board[selectedCell]', board[selectedCell]);
-    } else if (gameTurn === 'square') {
-      let boardCopy = [...board];
+    } else {
+      const boardCopy = [...board];
       boardCopy[selectedCell] = 'X';
       setBoard(boardCopy);
     }
   }, [selectedCell]);
 
   useEffect(() => {
-    gameTurn === 'circle' ? setGameTurn('square') : setGameTurn('circle');
-    console.log(gameTurn);
+    if (gameTurn === 'circle' && board[selectedCell] === '0') {
+      setGameTurn('square');
+    } else {
+      setGameTurn('circle');
+    }
+    // console.log(gameTurn);
+    console.log('UseEffectBoard', board);
   }, [board]);
 
+  // useEffect(() => {
+  //   console.log(board[selectedCell]);
+  //   if (board[selectedCell] === '0') {
+  //     setToken(<div><PlayerButton type='circle'></PlayerButton></div>);
+  //   } else if (board[selectedCell] === 'X') {
+  //     setToken(<div><PlayerButton type='square'></PlayerButton></div>);
+  //   }
+  // }, [gameTurn]);
+
+  // useEffect(() => {
+  //   console.log(board[selectedCell]);
+  //   if (board[selectedCell] === '0') {
+  //     setToken(<div><PlayerButton type='circle'></PlayerButton></div>);
+  //   } else if (board[selectedCell] === 'X') {
+  //     setToken(<div><PlayerButton type='square'></PlayerButton></div>);
+  //   }
+  // }, [gameTurn]);
 
 
   return (
@@ -48,8 +67,13 @@ function TicTacToe() {
         <br></br>
         <div className='row gridContainer'>
           {board.map((pos, index) =>
-            <GameGrid key={index} className='col-4' onClick={() =>
-              setSelectedCell(index)}></GameGrid>
+            <GameGrid
+              key={index}
+              className='col-4'
+              onClick={() =>
+                setSelectedCell(index)}>
+              <PlayerButton type={index}></PlayerButton>
+            </GameGrid>
           )}
         </div>
       </div>

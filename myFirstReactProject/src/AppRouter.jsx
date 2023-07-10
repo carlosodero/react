@@ -8,6 +8,7 @@ import Calc from './pages/calc/calc.jsx';
 import WheelOfFortune from './pages/WheelOfFortune/WheelOfFortune.jsx';
 import Bootstrap from './pages/bootstrap.jsx';
 import TicTacToe from './pages/TicTacToe/TicTacToe.jsx';
+import UseSort from './pages/UseSort/UseSort.jsx';
 
 function AppRouter() {
   return useRoutes(
@@ -47,6 +48,10 @@ function AppRouter() {
       {
         element: <TicTacToe />,
         path: '/tictactoe',
+      },
+      {
+        element: <UseSort />,
+        path: '/usesort',
       },
     ]
   );
